@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.87.1.13\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.87.1.13\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.87.1.13\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.87.1.13\build\cef.redist.x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF9E5331-3FF5-4145-9E67-0286124938C7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Demo</RootNamespace>
+    <AssemblyName>Playhouse Management Tool</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>billiard_Lp6_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp">
+      <HintPath>..\..\..\..\..\Desktop\CefSharp51_x64\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp, Version=87.1.132.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.87.1.132\lib\net452\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core">
+      <HintPath>..\..\..\..\..\Desktop\CefSharp51_x64\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=87.1.132.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.87.1.132\lib\net452\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms">
+      <HintPath>..\..\..\..\..\Desktop\CefSharp51_x64\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms, Version=87.1.132.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.WinForms.87.1.132\lib\net452\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="F01 - Log-in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F01 - Log-in.Designer.cs">
+      <DependentUpon>F01 - Log-in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F10 - Modify Income.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F10 - Modify Income.Designer.cs">
+      <DependentUpon>F10 - Modify Income.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F11 - Detect chat room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F11 - Detect chat room.Designer.cs">
+      <DependentUpon>F11 - Detect chat room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F12 - Today Logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F12 - Today Logs.Designer.cs">
+      <DependentUpon>F12 - Today Logs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F13 - Administrator Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F13 - Administrator Form.Designer.cs">
+      <DependentUpon>F13 - Administrator Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F02 - Playhouse Management Tool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F02 - Playhouse Management Tool.Designer.cs">
+      <DependentUpon>F02 - Playhouse Management Tool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F03 - Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F03 - Payment.Designer.cs">
+      <DependentUpon>F03 - Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F04 - Beverage Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F04 - Beverage Management.Designer.cs">
+      <DependentUpon>F04 - Beverage Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F05 - Time manual change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F05 - Time manual change.Designer.cs">
+      <DependentUpon>F05 - Time manual change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F06 - Change Announcement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F06 - Change Announcement.Designer.cs">
+      <DependentUpon>F06 - Change Announcement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F07 - Take Memo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F07 - Take Memo.Designer.cs">
+      <DependentUpon>F07 - Take Memo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F08 - Beverage Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F08 - Beverage Purchase.Designer.cs">
+      <DependentUpon>F08 - Beverage Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F09 - Cash Out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F09 - Cash Out.Designer.cs">
+      <DependentUpon>F09 - Cash Out.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F14 -Please double-check before leaving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F14 -Please double-check before leaving.Designer.cs">
+      <DependentUpon>F14 -Please double-check before leaving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F01 - Log-in.resx">
+      <DependentUpon>F01 - Log-in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F10 - Modify Income.resx">
+      <DependentUpon>F10 - Modify Income.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F11 - Detect chat room.resx">
+      <DependentUpon>F11 - Detect chat room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F12 - Today Logs.resx">
+      <DependentUpon>F12 - Today Logs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F02 - Playhouse Management Tool.resx">
+      <DependentUpon>F02 - Playhouse Management Tool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F03 - Payment.resx">
+      <DependentUpon>F03 - Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F04 - Beverage Management.resx">
+      <DependentUpon>F04 - Beverage Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F05 - Time manual change.resx">
+      <DependentUpon>F05 - Time manual change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F06 - Change Announcement.resx">
+      <DependentUpon>F06 - Change Announcement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F07 - Take Memo.resx">
+      <DependentUpon>F07 - Take Memo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F08 - Beverage Purchase.resx">
+      <DependentUpon>F08 - Beverage Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F09 - Cash Out.resx">
+      <DependentUpon>F09 - Cash Out.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F13 - Administrator Form.resx">
+      <DependentUpon>F13 - Administrator Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F14 -Please double-check before leaving.resx">
+      <DependentUpon>F14 -Please double-check before leaving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="billiard_Lp6_icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\cef.redist.x64.87.1.13\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.87.1.13\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.87.1.13\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.87.1.13\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.targets'))" />
+  </Target>
+  <Import Project="..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.87.1.132\build\CefSharp.Common.targets')" />
+</Project>
